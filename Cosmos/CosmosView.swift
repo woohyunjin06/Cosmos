@@ -439,12 +439,18 @@ Shows: ★★★★☆ (123)
     }
   }
 
+  @IBInspectable var emptyImage: UIImage? {
+    didSet {
+      settings.emptyImage = emptyImage
+    }
+  }
+  
   @IBInspectable var emptyTintColor: UIColor = CosmosDefaultSettings.emptyTintColor {
     didSet {
       settings.emptyTintColor = emptyTintColor
     }
   }
-  
+    
   /// Draw the stars in interface buidler
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
