@@ -35,6 +35,11 @@ public struct CosmosSettings {
   /// Background color of a filled star.
   public var filledColor = CosmosDefaultSettings.filledColor
   
+  /// Tint color of an empty star.
+  public var emptyTintColor = CosmosDefaultSettings.emptyTintColor
+    
+  /// Tint color of a filled star.
+  public var filledTintColor = CosmosDefaultSettings.filledTintColor
   /**
   
   Defines how the star is filled when the rating value is not a whole integer. It can either show full stars, half stars or stars partially filled according to the rating value.

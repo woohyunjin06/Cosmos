@@ -46,11 +46,18 @@ struct StarLayer {
   - parameter size: The width and height of the layer. The image is scaled to fit the layer.
 
   */
-  static func create(image: UIImage, size: Double) -> CALayer {
+  static func create(image: UIImage, size: Double, color: UIColor) -> CALayer {
     let containerLayer = createContainerLayer(size)
     let imageLayer = createContainerLayer(size)
-
-    containerLayer.addSublayer(imageLayer)
+    
+    let layer = CALayer()
+    
+    containerLayer.addSublayer(layer)
+    
+    layer.bounds.size = CGSize(width: size, height: size)
+    layer.mask = imageLayer
+    layer.backgroundColor = color.cgColor
+    
     imageLayer.contents = image.cgImage
     imageLayer.contentsGravity = CALayerContentsGravity.resizeAspect
     

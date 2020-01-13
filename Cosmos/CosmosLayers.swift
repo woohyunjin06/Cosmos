@@ -103,7 +103,8 @@ class CosmosLayers {
   private class func createStarLayer(_ isFilled: Bool, settings: CosmosSettings) -> CALayer {
     if let image = isFilled ? settings.filledImage : settings.emptyImage {
       // Create a layer that shows a star from an image
-      return StarLayer.create(image: image, size: settings.starSize)
+        let color = isFilled ? settings.filledTintColor : settings.emptyTintColor
+        return StarLayer.create(image: image, size: settings.starSize, color: color)
     }
     
     // Create a layer that draws a star from an array of points
